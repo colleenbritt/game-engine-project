@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSC 481 Game Project</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"></link>
+</head>
+
+<body>
+    <a class="link-text" href="about.html">About</a>
+    <a class="prev" onclick="gallery.incrementGameCanvas(-1)">&#10094;</a>
+    <div class="game-gallery-container">
+        <div class="game-canvas-container fade">
+            <div class="game-title">Alchemy</div>
+            <canvas id="alchemy-game-canvas" class="game-canvas" width="1000" height="600">
+                Canvas not supported. Try a better browser ;)
+            </canvas>
+        </div>
+        <div class="game-canvas-container fade">
+            <div class="game-title">Snake</div>
+            <canvas id="snake-game-canvas" class="game-canvas" width="1000" height="600">
+                Canvas not supported. Try a better browser ;)
+            </canvas>
+        </div>
+        <div class="game-canvas-container fade">
+            <div class="game-title">Asteroids</div>
+            <canvas id="asteroids-game-canvas" class="game-canvas" width="1000" height="600">
+                Canvas not supported. Try a better browser ;)
+            </canvas>
+        </div>
+        <div class="game-canvas-container fade">
+            <div class="game-title">Local Multiplayer Snake</div>
+            <canvas id="local-multiplayer-snake-game-canvas" class="game-canvas" width="1000" height="600">
+                Canvas not supported. Try a better browser ;)
+            </canvas>
+        </div>
+        <div>
+            <div class="game-canvas-container fade">
+                <div class="game-title">Online Multiplayer Snake</div>
+                <canvas id="online-multiplayer-snake-game-canvas" class="game-canvas" width="1000" height="600">
+                    Canvas not supported. Try a better browser ;)
+                </canvas>
+                <select id="online-snake-options">
+                    <option value="create-room">Create Room</option>
+                    <option value="join-room">Join Room</option>
+                </select>
+                Room name:
+                <input id="room-id" type="text">
+                <button id="room-id-submit" type="submit">Submit</button>
+            </div>
+        </div>
+        <div class="game-canvas-container fade">
+            <div class="game-title">Cops and Robbers</div>
+            <canvas id="cops-and-robbers-game-canvas" class="game-canvas" width="1000" height="600">
+                Canvas not supported. Try a better browser ;)
+            </canvas>
+        </div>
+    </div><br/>
+    <a class="next" onclick="gallery.incrementGameCanvas(1)">&#10095;</a>
+    <div style="text-align: center">
+        <span class="dot" onclick="gallery.currentGameCanvas(0)"></span>
+        <span class="dot" onclick="gallery.currentGameCanvas(1)"></span>
+        <span class="dot" onclick="gallery.currentGameCanvas(2)"></span>
+        <span class="dot" onclick="gallery.currentGameCanvas(3)"></span>
+        <span class="dot" onclick="gallery.currentGameCanvas(4)"></span>
+        <span class="dot" onclick="gallery.currentGameCanvas(5)"></span>
+    </div>
+</body>
+
+<!-- External Libraries -->
+<script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
+
+<!-- Import frontend code -->
+<script src="gallery.js"></script>
+
+<!-- Import backend engine code -->
+<script src="Assets.js"></script>
+<script src="storage.js"></script>
+<script src="ui-components.js"></script>
+<script src="particle-system.js"></script>
+<script src="collision-system.js"></script>
+<script src="engine.js"></script>
+
+<!-- Import backend game code -->
+<script src="alchemy.js"></script>
+<script src="snake.js"></script>
+<script src="asteroids.js"></script>
+<script src="local-multiplayer-snake.js"></script>
+<script src="online-multiplayer-snake.js"></script>
+<script src="cops-and-robbers.js"></script>
+
+<!-- Initialize the page by starting up the Gallery -->
+<script>
+    var gallery = new Gallery();
+</script>
+
+</html>
